@@ -1,4 +1,45 @@
-/* RESET & GLOBAL */
+import { Link } from "react-router-dom";
+
+export default function Landing() {
+  return (
+    <div className="landing-page">
+
+      {/* HERO SECTION */}
+      <section className="hero">
+        <div className="hero-content">
+          <h1>Track Your Investments with Clarity</h1>
+          <p>
+            PurpleVault lets you manage stocks, mutual funds, bonds, gold, and more — 
+            all in one secure dashboard. Stay on top of your wealth effortlessly.
+          </p>
+          <Link to="/register" className="cta-btn">Get Started</Link>
+        </div>
+      </section>
+
+      {/* FEATURES SECTION */}
+      <section className="features">
+        <div className="feature-card">
+          <h3>📊 Asset Tracking</h3>
+          <p>View all your investments in one clean dashboard.</p>
+        </div>
+        <div className="feature-card">
+          <h3>🔒 Secure</h3>
+          <p>JWT-based authentication keeps your data private and safe.</p>
+        </div>
+        <div className="feature-card">
+          <h3>📱 Mobile Ready</h3>
+          <p>Optimized for all devices, from phones to desktops.</p>
+        </div>
+      </section>
+
+      {/* CALL TO ACTION */}
+      <section className="cta-section">
+        <h2>Ready to take control of your assets?</h2>
+        <Link to="/register" className="cta-btn-outline">Create Free Account</Link>
+      </section>
+    </div>
+  );
+}  this is my landing.js /* RESET & GLOBAL */
 * {
   box-sizing: border-box;
 }
@@ -309,6 +350,22 @@ input:focus, select:focus {
   color: #333;
 }
 
+@media (max-width: 600px) {
+  .dashboard-card {
+    padding: 20px;
+  }
+
+  .asset-list .asset-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .delete-btn {
+    align-self: flex-end;
+  }
+}
+
 /* LANDING PAGE */
 .landing-page {
   font-family: 'Inter', sans-serif;
@@ -347,10 +404,51 @@ input:focus, select:focus {
   border-radius: 30px;
   font-weight: 600;
   text-decoration: none;
+  transition: 0.3s;
 }
 
 .cta-btn:hover {
   background: #5a0cb0;
+}
+
+/* MOBILE VIEW HERO ADJUSTMENTS */
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 15px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem; /* smaller heading */
+  }
+
+  .hero-content p {
+    font-size: 0.95rem; /* smaller paragraph */
+    max-width: 100%; /* fit mobile screen */
+  }
+
+  .cta-btn {
+    padding: 10px 22px; /* slightly smaller button */
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 50px 10px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .cta-btn {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+  }
 }
 
 /* FEATURES */
@@ -404,14 +502,9 @@ input:focus, select:focus {
   color: white;
 }
 
-/* MOBILE VIEW ADJUSTMENTS */
 @media (max-width: 600px) {
   .hero-content h1 {
-    font-size: 1.6rem; /* smaller heading */
-  }
-
-  .hero-content p {
-    font-size: 0.95rem; /* smaller paragraph */
+    font-size: 2rem;
   }
 
   .features {
