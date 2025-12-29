@@ -1,45 +1,4 @@
-import { Link } from "react-router-dom";
-
-export default function Landing() {
-  return (
-    <div className="landing-page">
-
-      {/* HERO SECTION */}
-      <section className="hero">
-        <div className="hero-content">
-          <h1>Track Your Investments with Clarity</h1>
-          <p>
-            PurpleVault lets you manage stocks, mutual funds, bonds, gold, and more — 
-            all in one secure dashboard. Stay on top of your wealth effortlessly.
-          </p>
-          <Link to="/register" className="cta-btn">Get Started</Link>
-        </div>
-      </section>
-
-      {/* FEATURES SECTION */}
-      <section className="features">
-        <div className="feature-card">
-          <h3>📊 Asset Tracking</h3>
-          <p>View all your investments in one clean dashboard.</p>
-        </div>
-        <div className="feature-card">
-          <h3>🔒 Secure</h3>
-          <p>JWT-based authentication keeps your data private and safe.</p>
-        </div>
-        <div className="feature-card">
-          <h3>📱 Mobile Ready</h3>
-          <p>Optimized for all devices, from phones to desktops.</p>
-        </div>
-      </section>
-
-      {/* CALL TO ACTION */}
-      <section className="cta-section">
-        <h2>Ready to take control of your assets?</h2>
-        <Link to="/register" className="cta-btn-outline">Create Free Account</Link>
-      </section>
-    </div>
-  );
-}  this is my landing.js /* RESET & GLOBAL */
+/* RESET & GLOBAL */
 * {
   box-sizing: border-box;
 }
@@ -350,27 +309,11 @@ input:focus, select:focus {
   color: #333;
 }
 
-@media (max-width: 600px) {
-  .dashboard-card {
-    padding: 20px;
-  }
-
-  .asset-list .asset-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-
-  .delete-btn {
-    align-self: flex-end;
-  }
-}
-
 /* LANDING PAGE */
 .landing-page {
   font-family: 'Inter', sans-serif;
   color: #333;
-  background: #f6f0ff; /* light purple background */
+  background: #f6f0ff;
 }
 
 /* HERO */
@@ -409,46 +352,6 @@ input:focus, select:focus {
 
 .cta-btn:hover {
   background: #5a0cb0;
-}
-
-/* MOBILE VIEW HERO ADJUSTMENTS */
-@media (max-width: 768px) {
-  .hero {
-    padding: 60px 15px;
-  }
-
-  .hero-content h1 {
-    font-size: 1.8rem; /* smaller heading */
-  }
-
-  .hero-content p {
-    font-size: 0.95rem; /* smaller paragraph */
-    max-width: 100%; /* fit mobile screen */
-  }
-
-  .cta-btn {
-    padding: 10px 22px; /* slightly smaller button */
-    font-size: 0.95rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero {
-    padding: 50px 10px;
-  }
-
-  .hero-content h1 {
-    font-size: 1.5rem;
-  }
-
-  .hero-content p {
-    font-size: 0.9rem;
-  }
-
-  .cta-btn {
-    padding: 8px 20px;
-    font-size: 0.9rem;
-  }
 }
 
 /* FEATURES */
@@ -502,13 +405,111 @@ input:focus, select:focus {
   color: white;
 }
 
-@media (max-width: 600px) {
-  .hero-content h1 {
-    font-size: 2rem;
+/* MOBILE ADJUSTMENTS */
+@media (max-width: 768px) {
+  /* HERO */
+  .hero {
+    padding: 60px 15px;
   }
 
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+    max-width: 100%;
+  }
+
+  .cta-btn {
+    padding: 10px 22px;
+    font-size: 0.95rem;
+  }
+
+  /* FEATURES GRID */
   .features {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+
+  /* DASHBOARD CARD */
+  .dashboard-card {
+    padding: 20px;
+  }
+
+  /* ASSET LIST */
+  .asset-list .asset-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 12px 10px;
+  }
+
+  .asset-list .asset-item div:last-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .delete-btn {
+    font-size: 0.8rem;
+    padding: 5px 12px;
+    align-self: flex-end;
+  }
+
+  /* PIE CHART */
+  .chart-container {
+    padding: 20px;
+  }
+
+  .recharts-legend-wrapper {
+    font-size: 0.85rem;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .recharts-tooltip-wrapper {
+    font-size: 0.85rem !important;
+    padding: 8px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 50px 10px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .cta-btn {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+  }
+
+  .asset-list .asset-item div:last-child {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .asset-list .asset-item div:first-child {
+    font-size: 0.9rem;
+  }
+
+  .delete-btn {
+    padding: 4px 10px;
+    font-size: 0.75rem;
+  }
+
+  .chart-container {
+    padding: 15px;
   }
 }
