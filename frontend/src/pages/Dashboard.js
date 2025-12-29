@@ -21,7 +21,7 @@ export default function Dashboard() {
 
   const fetchAssets = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/assets", {
+      const res = await axios.get("https://purplevault.onrender.com/api/assets", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setAssets(res.data);
@@ -41,7 +41,7 @@ export default function Dashboard() {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/assets",
+        "https://purplevault.onrender.com/api/assets",
         {
           assetName,
           assetType,
@@ -61,7 +61,7 @@ export default function Dashboard() {
 
   const deleteAsset = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/assets/${id}`, {
+      await axios.delete(`https://purplevault.onrender.com/api/assets/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchAssets();
