@@ -7,10 +7,9 @@ export default function Landing() {
       {/* HERO SECTION */}
       <section className="hero">
         <div className="hero-content">
-          <h1>Track Your Investments with Clarity</h1>
+          <h1>Track Your Investments</h1>
           <p>
-            PurpleVault lets you manage stocks, mutual funds, bonds, gold, and more — 
-            all in one secure dashboard. Stay on top of your wealth effortlessly.
+            PurpleVault lets you manage stocks, mutual funds, bonds, gold, and more -all in one secure dashboard. Stay on top of your wealth effortlessly.
           </p>
           <Link to="/register" className="cta-btn">Get Started</Link>
         </div>
