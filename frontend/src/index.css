@@ -309,22 +309,6 @@ input:focus, select:focus {
   color: #333;
 }
 
-@media (max-width: 600px) {
-  .dashboard-card {
-    padding: 20px;
-  }
-
-  .asset-list .asset-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-
-  .delete-btn {
-    align-self: flex-end;
-  }
-}
-
 /* LANDING PAGE */
 .landing-page {
   font-family: 'Inter', sans-serif;
@@ -336,7 +320,7 @@ input:focus, select:focus {
 .hero {
   text-align: center;
   padding: 80px 20px;
-  background: #f6f0ff; /* light purple */
+  background: #f6f0ff;
   color: #6a0dad;
   margin-bottom: 40px;
 }
@@ -420,9 +404,14 @@ input:focus, select:focus {
   color: white;
 }
 
+/* MOBILE VIEW ADJUSTMENTS */
 @media (max-width: 600px) {
   .hero-content h1 {
-    font-size: 2rem;
+    font-size: 1.6rem; /* smaller heading */
+  }
+
+  .hero-content p {
+    font-size: 0.95rem; /* smaller paragraph */
   }
 
   .features {
